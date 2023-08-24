@@ -9,38 +9,34 @@ code rule
 4. Use the `return` function instead of the `exit` function to prevent the file from being twisted.
 5. Include "pch.h" to create a separate pch.h file for header files. (To prevent file from header twisted)
 
-// exemple.c argv1 argv2
+// exemple.c argv1 argv2  
 
-#include "pch.h"\n
-#define HELLOLEN\n\n
-
-void execute_exemple(char v1) {\n
-  if(!memcmp(v1, "hello world", HELLOLEN)){ // instead of using `if (memcmp() == 0)`, use `if(!memcmp())`\n
-    printf(" ------- same word ------- ");\n
-  }\n
-  else {\n
-    for(;;) { // instead of using while(True), use for(;;)
-      printf("id\t: %s", v1 > "hello world" ? "Upper case" : "Lower case");
-      break;
-    }
-  }
-}
-
-int main(int argc, char* argv[]) {
-  if (argc < 3) {
-    fprintf(stderr, "There is Less arguments);
-    return -1; // DO NOT USE `exit(1)`
-  }
-  printf("%s\n %s\n", argv[1], argv[2]);
-  execute_exemple(argv[3]);
-  return 0;
-}
-
-// pch.h
-
-#include <stdio.h>
-#include <Windows.h>
-
-
-
-
+#include "pch.h"  
+#define HELLOLEN  
+  
+void execute_exemple(char v1) {  
+  if(!memcmp(v1, "hello world", HELLOLEN)){ // instead of using `if (memcmp() == 0)`, use `if(!memcmp())`  
+    printf(" ------- same word ------- ");  
+  }  
+  else {  
+    for(;;) { // instead of using while(True), use for(;;)  
+      printf("id\t: %s", v1 > "hello world" ? "Upper case" : "Lower case");  
+      break;  
+    }  
+  }  
+}  
+  
+int main(int argc, char* argv[]) {  
+  if (argc < 3) {  
+    fprintf(stderr, "There is Less arguments);  
+    return -1; // DO NOT USE `exit(1)`  
+  }  
+  printf("%s\n %s\n", argv[1], argv[2]);  
+  execute_exemple(argv[3]);  
+  return 0;  
+}  
+  
+// pch.h  
+  
+#include <stdio.h>  
+#include <Windows.h>  
