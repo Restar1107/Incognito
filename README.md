@@ -1,4 +1,4 @@
 # Incognito
 2023-2 CAU Incognito party
 
-to use micro files
+to fetch dev branch, make micro files
