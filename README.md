@@ -9,6 +9,7 @@ code rule
 4. Use the `return` function instead of the `exit` function to prevent the file from being twisted.
 5. Include "pch.h" to create a separate pch.h file for header files. (To prevent file from header twisted)
 
+```c
 // exemple.c argv1 argv2  
 
 #include "pch.h"  
@@ -40,3 +41,4 @@ int main(int argc, char* argv[]) {
   
 #include <stdio.h>  
 #include <Windows.h>  
+```
