@@ -15,6 +15,18 @@ code rule
 #include "pch.h"  
 #define HELLOLEN  
   
+void execute_exemple(char v1); 
+  
+int main(int argc, char* argv[]) {  
+  if (argc < 3) {  
+    fprintf(stderr, "There is Less arguments);  
+    return -1; // DO NOT USE `exit(1)`  
+  }  
+  printf("%s\n %s\n", argv[1], argv[2]);  
+  execute_exemple(argv[3]);  
+  return 0;  
+}
+
 void execute_exemple(char v1) {  
   if(!memcmp(v1, "hello world", HELLOLEN)){ // instead of using `if (memcmp() == 0)`, use `if(!memcmp())`  
     printf(" ------- same word ------- ");  
@@ -26,16 +38,7 @@ void execute_exemple(char v1) {
     }  
   }  
 }  
-  
-int main(int argc, char* argv[]) {  
-  if (argc < 3) {  
-    fprintf(stderr, "There is Less arguments);  
-    return -1; // DO NOT USE `exit(1)`  
-  }  
-  printf("%s\n %s\n", argv[1], argv[2]);  
-  execute_exemple(argv[3]);  
-  return 0;  
-}  
+
   
 // pch.h  
   
